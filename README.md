@@ -30,3 +30,17 @@ A MinHeap data structure which implements a complete tree for which each root is
 - `public int Count` - Returns the number of elements in the heap. 0 if empty.
 - `public void Insert(T data)` - Inserts a new value to the MinHeap and reforms the heap by maintaining the MinHeap properties.
 - `public T ExtractMin()` - Removes the minimum element of the MinHeap, reforms the heap and returns the minimum element.
+- ### Trie
+The Trie data structure implementation, which only supports small characters (a-z).
+- `public Trie()` - Creates a new Trie data structure and creates an empty TrieNode as root which doens't hold any character (constructor).
+- `public void Insert(string word)` - Inserts a word into the trie.
+- `public bool Search(string word)` - Retruns true if the given word is found in the trie, false otherwise.
+- `public List<string> Suggestions(string prefix)` - Generates and returns the list of the suggestions, which are the words that can be created with the given prefix.
+- `public bool StartsWith(string prefix)` - Returns true if there is any word in the trie that starts with the given prefix, false otherwise.
+- ### TrieNode
+A node of the Trie data structure. Each node can either have no character (root of the trie) or have small letters assigned to it (a-z).
+- `public TrieNode()` - Creates a new TrieNode which doesn't have any character and only used as the root of the trie (constructor).
+- `public TrieNode(char ch)` - Creates a new TrieNode and assigns the character ch to the node (constructor).
+- `public char C` - Gets the character assigned to this node.
+- `public TrieNode[] Children` - Gets the list of the children mappings for this node.
+- `public bool IsLeaf` - Return true if this current node (character) ends up to a complete word.
