@@ -5,7 +5,7 @@ Below are the list of classes and methods provided in the project:
 # Data Structures
 - ### LinkedList_Node
 A singly LinkedList data structure of generic type.
-- public LinkedList_Node(T data)` - Creates a LinkedList node with the given data (constructor).
+- `public LinkedList_Node(T data)` - Creates a LinkedList node with the given data (constructor).
 - `public void Print()` - Prints the LinkedList to Console.
 - `public override string ToString()` - Prints the LinkedList to string.
 - `public List<LinkedList_Node<T>> ToList()` - Inserts nodes of the LinkedList to a list and returns it.
