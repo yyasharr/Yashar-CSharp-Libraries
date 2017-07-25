@@ -111,7 +111,7 @@ namespace Yashar
             }
 
             /// <summary>
-            /// Put the given LinkedList node at the end of the LinkedList.
+            /// Puts the given LinkedList node at the end of the LinkedList.
             /// </summary>
             /// <param name="data"></param>
             public void AddToEnd(LinkedList_Node<T> new_node)

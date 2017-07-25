@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data Structures\LinkedList_Node.cs" />
+    <Compile Include="Data Structures\MaxHeap.cs" />
+    <Compile Include="Data Structures\MinHeap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
