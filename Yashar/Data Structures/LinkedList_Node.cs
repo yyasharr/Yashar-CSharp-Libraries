@@ -38,15 +38,18 @@ namespace Yashar
             /// </summary>
             public void Print()
             {
-                if (this == null)
+                Print(this);
+            }
+            private static void Print(LinkedList_Node<T> list)
+            {
+                if (list == null)
                     Console.WriteLine("null");
                 else
                 {
-                    Console.Write(this._data + "->");
-                    this.Next.Print();
+                    Console.Write(list._data + "->");
+                    Print(list.Next);
                 }
             }
-
 
             /// <summary>
             /// Prints the LinkedList to string.
@@ -54,21 +57,12 @@ namespace Yashar
             /// <returns></returns>
             public override string ToString()
             {
-                return this.ToStringHelper("");
+                return ToStringHelper(this,"");
             }
 
-            private string ToStringHelper(string str)
+            private string ToStringHelper(LinkedList_Node<T>head,string str)
             {
-                if (this == null)
-                {
-                    str += this.Data;
-
-                }
-                else
-                {
-                    str += this.Data + "->";
-                    this.Next.ToStringHelper(str);
-                }
+                str += (head == null) ? "null" : head.Data + "->" + ToStringHelper(head.Next, str);
                 return str;
             }
 
@@ -79,15 +73,15 @@ namespace Yashar
             /// <returns></returns>
             public List<LinkedList_Node<T>> ToList()
             {
-                return this.ToListHelper(new List<LinkedList_Node<T>>());
+                return ToListHelper(this,new List<LinkedList_Node<T>>());
             }
 
-            private List<LinkedList_Node<T>> ToListHelper(List<LinkedList_Node<T>> list)
+            private List<LinkedList_Node<T>> ToListHelper(LinkedList_Node<T> head,List<LinkedList_Node<T>> list)
             {
-                if (this != null)
+                if (head != null)
                 {
-                    list.Add(this);
-                    this.Next.ToListHelper(list);
+                    list.Add(head);
+                    ToListHelper(head,list);
                 }
                 return list;
             }
@@ -102,7 +96,7 @@ namespace Yashar
 
                 LinkedList_Node<T> current = this;
 
-                while(current.Next!=null)
+                while (current.Next != null)
                 {
                     current = current.Next;
                 }
@@ -116,7 +110,7 @@ namespace Yashar
             /// <param name="data"></param>
             public void AddToEnd(LinkedList_Node<T> new_node)
             {
-                LinkedList_Node<T> current= this;
+                LinkedList_Node<T> current = this;
 
                 while (current.Next != null)
                     current = current.Next;
@@ -156,7 +150,7 @@ namespace Yashar
                 LinkedList_Node<T> head = this;
                 LinkedList_Node<T> prev = null;
 
-                while(head!=null)
+                while (head != null)
                 {
                     LinkedList_Node<T> next = head.Next;
                     head.Next = prev;
@@ -167,7 +161,7 @@ namespace Yashar
             }
 
         }
-        
+
     }
 
 }
