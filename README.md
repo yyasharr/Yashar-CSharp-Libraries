@@ -9,7 +9,7 @@ Below are the list of classes and methods provided in the project.
     * [Min Heap](#minheap)
     * [Trie](#trie)
     * [Trie Node](#trienode)
-    
+    * [Tree Node](#treenode)
 
 # Data Structures
 ### LinkedList_Node
@@ -53,3 +53,17 @@ A node of the Trie data structure. Each node can either have no character (root 
 - `public char C` - Gets the character assigned to this node.
 - `public TrieNode[] Children` - Gets the list of the children mappings for this node.
 - `public bool IsLeaf` - Return true if this current node (character) ends up to a complete word.
+### Treenode
+Implementation of a node of a binary tree, where each node can have a left or right child node.
+- `public Treenode(int data)` - Creates a binary Treenode with the given integar as its value.
+- `public List<int> InOrderTraversal()` - Returns a list of Treenodes, sorted as inorder traversal.
+- `public List<int> PreOrderTraversal()` - Returns a list of Treenodes, sorted as preorder traversal.
+- `public List<int> PostOrderTraversal()` - Returns a list of Treenodes, sorted as postorder traversal.
+- `public int Height()` - Returns the height (depth) of the binary tree. (0 if null)
+- `public int CompareTo(Treenode other)` - Compares the data of this node with another given node. If this is greater than other, return 1. Otherwise 0 and 1 for equal or smaller respectively.
+- `public bool ValidateBST()` - Returns true if the tree starting at this Treenode is a Binary Search Tree.
+- `public Treenode DeleteNode_BST(int key)` - Deletes a node with the data of the given key from the BST and returns the new root. Returns the current root if it's not a binary search tree.
+- `public bool IsBalanced()` - Returns true if the tree starting at this node is balanced, false otherwise.
+- `public Treenode LowestCommonAncestor_BST(Treenode n1, Treenode n2)` - Returns the lowest common ancestor of a binary search tree. Will throw an exception if it's not BST.
+- `public Treenode LowestCommonAncestor(Treenode n1, Treenode n2)` - Returns the lowest common ancestor of a binary tree. Will return null if either of the nodes do not exist in the tree.
+- `public int Diameter()` - Diameter of this binary tree, which is the longest path between any two node inside the tree.
