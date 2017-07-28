@@ -85,7 +85,6 @@ namespace Yashar
                 this.PostOrderTraversal_Helper(nodes);
                 return nodes;
             }
-
             private void PostOrderTraversal_Helper(List<int> nodes)
             {
                 if (this == null)

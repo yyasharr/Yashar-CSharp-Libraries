@@ -8,7 +8,7 @@ namespace Yashar
 {
     namespace DataStructures
     {
-        class MinHeap<T> where T : IComparable<T>
+        public class MinHeap<T> where T : IComparable<T>
         {
             private List<T> Heap;
 

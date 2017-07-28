@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common Methods\Print.cs" />
+    <Compile Include="Common Methods\Sort.cs" />
     <Compile Include="Data Structures\LinkedList_Node.cs" />
     <Compile Include="Data Structures\MaxHeap.cs" />
     <Compile Include="Data Structures\MinHeap.cs" />

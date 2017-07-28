@@ -8,7 +8,7 @@ namespace Yashar
 {
     namespace DataStructures
     {
-        public class TrieNode
+        class TrieNode
         {
             char _c;
             TrieNode[] _children;
