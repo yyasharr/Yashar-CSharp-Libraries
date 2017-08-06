@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Yashar.DataStructures;
 
 namespace Yashar
 {
@@ -152,6 +153,15 @@ namespace Yashar
                     }
                     Console.WriteLine();
                 }
+            }
+
+            /// <summary>
+            /// Prints the tree on a Windows Form.
+            /// </summary>
+            /// <param name="root"></param>
+            public static void ToForm(this Treenode root)
+            {
+                root.Print();
             }
 
         }

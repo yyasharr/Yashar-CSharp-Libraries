@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Yashar
 {
@@ -285,6 +286,56 @@ namespace Yashar
 
                 return Math.Max(curr, Math.Max(leftdiameter, rightdiameter));
                 
+            }
+
+            /// <summary>
+            /// Prints the entire tree on a Windows Form.
+            /// </summary>
+            public void Print()
+            {
+                TreeView tv = FillTreeView();
+                Yashar.UI.TreeUIForm tf = new UI.TreeUIForm(tv);
+                Application.Run(tf);
+            }
+            private TreeView FillTreeView()
+            {
+                TreeView treeview = new TreeView();
+
+                Queue<Treenode> treenodeQ = new Queue<Treenode>();
+                treenodeQ.Enqueue(this);
+
+                Queue<TreeNode> treeviewQ = new Queue<TreeNode>();
+                TreeNode first = new TreeNode(this.Data.ToString());
+                treeview.Nodes.Add(first);
+                treeviewQ.Enqueue(first);
+
+                treeview.BeginUpdate();
+
+                while (treenodeQ.Any())
+                {
+                    Treenode tempnode = treenodeQ.Dequeue();
+                    TreeNode tempNode = treeviewQ.Dequeue();
+
+                    if (tempnode.Left != null)
+                    {
+                        treenodeQ.Enqueue(tempnode.Left);
+
+                        TreeNode left = new TreeNode("L:" + tempnode.Left.Data);
+                        tempNode.Nodes.Add(left);
+                        treeviewQ.Enqueue(left);
+                    }
+                    if (tempnode.Right != null)
+                    {
+                        treenodeQ.Enqueue(tempnode.Right);
+
+                        TreeNode right = new TreeNode("R:" + tempnode.Right.Data);
+                        tempNode.Nodes.Add(right);
+                        treeviewQ.Enqueue(right);
+                    }
+                }
+
+                treeview.EndUpdate();
+                return treeview;
             }
         }
     }

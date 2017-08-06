@@ -160,6 +160,30 @@ namespace Yashar
                 return prev;
             }
 
+            /// <summary>
+            /// Returns the merging node between this LinkedList and another given list. Null if no merge.
+            /// </summary>
+            /// <param name="Other"></param>
+            /// <returns></returns>
+            public LinkedList_Node<T> MergeNode(LinkedList_Node<T> Other)
+            {
+                LinkedList_Node<T> A = this;
+                LinkedList_Node<T> B = Other;
+
+                while(A!=B)
+                {
+                    if(A.Next==null)
+                        A = Other;
+                    else
+                        A = A.Next;
+
+                    if (B.Next == null)
+                        B = this;
+                    else B = B.Next;
+                }
+                return A;
+            }
+
         }
 
     }
