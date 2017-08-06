@@ -12,6 +12,8 @@ Below are the list of classes and methods provided in the project.
     * [Tree Node](#treenode)
 * [Common Methods](#common-methods)
     * [Print](#print)
+        * [ToConsole](#toconsole)
+        * [ToForm](#toform)
     * [Sort](#sort)
         * [MergeSort()](#mergesort)
         * [QuickSort()](#quicksort)
@@ -68,7 +70,9 @@ Implementation of a node of a binary tree, where each node can have a left or ri
 - `public int Height()` - Returns the height (depth) of the binary tree. (0 if null)
 - `public int CompareTo(Treenode other)` - Compares the data of this node with another given node. If this is greater than other, return 1. Otherwise 0 and 1 for equal or smaller respectively.
 - `public bool ValidateBST()` - Returns true if the tree starting at this Treenode is a Binary Search Tree.
-- `public Treenode DeleteNode_BST(int key)` - Deletes a node with the data of the given key from the BST and returns the new root. Returns the current root if it's not a binary search tree.
+- `public Treenode DeleteNode_BST(int key)` - Deletes a node with the data of the given key from the BST and returns the new root.
+- `public void Print()` - Prints the entire tree on a Windows Form.
+Returns the current root if it's not a binary search tree.
 - `public bool IsBalanced()` - Returns true if the tree starting at this node is balanced, false otherwise.
 - `public Treenode LowestCommonAncestor_BST(Treenode n1, Treenode n2)` - Returns the lowest common ancestor of a binary search tree. Will throw an exception if it's not BST.
 - `public Treenode LowestCommonAncestor(Treenode n1, Treenode n2)` - Returns the lowest common ancestor of a binary tree. Will return null if either of the nodes do not exist in the tree.
@@ -86,10 +90,13 @@ array.ToConsole();
 ### Print
 Implementation of printing different collections and 2D arrays. Contains below functions:
 ##### ToConsole()
-This method overloads 9 types:
+This method currently overloads 9 types:
 - ICollection<int> | ICollection<string> | ICollection<char>
 - int[,] | string[,] | char[,]
 - List<List<int>> | List<List<string>> | List<List<char>>
+##### ToForm()
+This method currently overloads 1 type:
+- Treenode; i.e. Yashar.DataStructures.Treenode
  
 ### Sort
 Implementatoin of sorting algorithms and perform on array of integers. Contains below functions:
