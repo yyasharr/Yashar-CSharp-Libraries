@@ -10,6 +10,12 @@ Below are the list of classes and methods provided in the project.
     * [Trie](#trie)
     * [Trie Node](#trienode)
     * [Tree Node](#treenode)
+* [Common Methods](#common-methods)
+    * [Print](#print)
+    * [Sort](#sort)
+        * [MergeSort()](#mergesort)
+        * [QuickSort()](#quicksort)
+    
 
 # Data Structures
 ### LinkedList_Node
@@ -67,3 +73,27 @@ Implementation of a node of a binary tree, where each node can have a left or ri
 - `public Treenode LowestCommonAncestor_BST(Treenode n1, Treenode n2)` - Returns the lowest common ancestor of a binary search tree. Will throw an exception if it's not BST.
 - `public Treenode LowestCommonAncestor(Treenode n1, Treenode n2)` - Returns the lowest common ancestor of a binary tree. Will return null if either of the nodes do not exist in the tree.
 - `public int Diameter()` - Diameter of this binary tree, which is the longest path between any two node inside the tree.
+
+# Common Methods
+The method has been declared as an '*extension method*' which allows the use of the method on the DataType or Collection itself.
+
+For example, below code can be written:
+```
+int[] array = { 3, 7, 5, 2, 10 };
+array.QuickSort();
+array.ToConsole();
+```
+### Print
+Implementation of printing different collections and 2D arrays. Contains below functions:
+##### ToConsole()
+This method overloads 9 types:
+- ICollection<int> | ICollection<string> | ICollection<char>
+- int[,] | string[,] | char[,]
+- List<List<int>> | List<List<string>> | List<List<char>>
+ 
+### Sort
+Implementatoin of sorting algorithms and perform on array of integers. Contains below functions:
+##### MergeSort()
+Sorts a given array of integers, using MergeSort algorithm. Also can be used as int[].MergeSort().
+##### QuickSort()
+Sorts a given array of integers, using QuickSort algorithm. Also can be used as int[].QuickSort().
