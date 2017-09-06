@@ -133,7 +133,7 @@ namespace Yashar
                 {
                     foreach (string s in temp)
                     {
-                        Console.Write(s+ "\t");
+                        Console.Write(s + "\t");
                     }
                     Console.WriteLine();
                 }
@@ -149,7 +149,7 @@ namespace Yashar
                 {
                     foreach (char c in temp)
                     {
-                        Console.Write(c+ "\t");
+                        Console.Write(c + "\t");
                     }
                     Console.WriteLine();
                 }
@@ -163,7 +163,6 @@ namespace Yashar
             {
                 root.Print();
             }
-
         }
     }
 }

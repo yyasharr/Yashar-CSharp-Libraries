@@ -285,7 +285,6 @@ namespace Yashar
                 int rightdiameter = Diameter(root.Right);
 
                 return Math.Max(curr, Math.Max(leftdiameter, rightdiameter));
-                
             }
 
             /// <summary>

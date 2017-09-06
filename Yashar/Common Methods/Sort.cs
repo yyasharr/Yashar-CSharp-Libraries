@@ -16,28 +16,31 @@ namespace Yashar
             /// <param name="array"></param>
             public static void MergeSort(this int[] array)
             {
+                if (array == null || array.Length < 2) return;
+
                 int n = array.Length;
-                if (n < 2) return;
+
                 int mid = n / 2;
                 int[] left = new int[mid];
                 int[] right = new int[n - mid];
 
-                for (int i = 0; i < mid; i++)
-                {
-                    left[i] = array[i];
-                }
-                for (int i = mid; i < n; i++)
-                {
-                    right[i - mid] = array[i];
-                }
+                int i;
 
-                MergeSort(right);
+                for (i = 0; i < left.Length; i++)
+                    left[i] = array[i];
+
+                for (i = mid; i < array.Length; i++)
+                    right[i - mid] = array[i];
+
                 MergeSort(left);
+                MergeSort(right);
+
                 Merge(left, right, array);
+
             }
             private static void Merge(int[] left, int[] right, int[] array)
             {
-                int i = 0; int j = 0; int k = 0;
+                int i = 0, j = 0, k = 0;
 
                 while (i < left.Length && j < right.Length)
                 {
@@ -52,31 +55,27 @@ namespace Yashar
                         j++; k++;
                     }
                 }
-                if (i >= left.Length)
-                {
-                    while (j < right.Length)
-                    {
-                        array[k] = right[j];
-                        j++; k++;
-                    }
-                }
 
-                if (j >= right.Length)
+                while (i < left.Length)
                 {
-                    while (i < left.Length)
-                    {
-                        array[k] = left[i];
-                        i++; k++;
-                    }
+                    array[k] = left[i];
+                    i++; k++;
+                }
+                while (j < right.Length)
+                {
+                    array[k] = right[j];
+                    j++; k++;
                 }
             }
-
             /// <summary>
             /// Sorts a given array of integers, using QuickSort algorithm. Also can be used as int[].QuickSort();
             /// </summary>
             /// <param name="array"></param>
             public static void QuickSort(this int[] array)
             {
+                if (array == null)
+                    return;
+
                 QuickSort(array, 0, array.Length - 1);
             }
             private static void QuickSort(int[] array, int min, int max)
